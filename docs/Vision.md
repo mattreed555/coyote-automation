@@ -143,7 +143,11 @@ AI is valuable when it helps users express intent, understand tradeoffs, and imp
 
 Plugins and extensions can make the system more powerful, but they should be mediated through the app's capability and policy layer rather than creating side doors around it.
 
-### 9. Respect the computer as a personal environment
+### 9. Plugin-first product surface, host-first implementation foundation
+
+Feature growth should favor adding host-mediated plugin capabilities before adding large new core runtime features. Internally, implementation should still be sequenced host runtime first, then runtime profiles, then plugins.
+
+### 10. Respect the computer as a personal environment
 
 This product should treat the local machine as a place of agency, privacy, and craft, not just a host for another cloud service.
 

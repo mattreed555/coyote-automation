@@ -32,6 +32,25 @@ And adds two capabilities:
 - Dependencies come from host-managed runtime profiles, not runtime `pip install`.
 - `v0.1` remains CLI test mode: schedule is parsed and validated but execution runs immediately.
 
+## Priority Model
+
+Product surface priority:
+
+1. Plugin capability growth
+2. Runtime profile growth
+3. New core host runtime features
+
+Implementation dependency order:
+
+1. Host runtime foundation (capability mediation, policy, logging, security)
+2. Runtime profile enforcement (immutable images, pinned versions)
+3. Plugin capability extensions (function APIs on top of host mediation)
+
+Short form:
+
+- plugin-first product strategy
+- host-first implementation foundation
+
 ## File Format
 
 A `v0.1` automation is one Python file with YAML front matter encoded as line comments at the top.
@@ -448,4 +467,3 @@ def main():
 
     return {"ok": True}
 ```
-
